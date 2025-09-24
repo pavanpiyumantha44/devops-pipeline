@@ -1,8 +1,8 @@
-name CI Pipeline
+name: CI Pipeline
 
 on:
   push:
-    branches:[ main ]
+    branches: [main]
 
 jobs:
   build:
@@ -12,13 +12,13 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v5
 
-      - name: Set up Node.jobs
+      - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
-            node-version: 16
-      
-      -name: Install dependencies
-        run: npm Install
+          node-version: 16
 
-      -name: Run tests
+      - name: Install dependencies
+        run: npm install
+
+      - name: Run tests
         run: npm test
